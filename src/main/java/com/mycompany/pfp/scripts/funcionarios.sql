@@ -1,0 +1,20 @@
+CREATE TABLE funcionarios (
+    id SERIAL PRIMARY KEY,
+    nome_completo            VARCHAR(100) NOT NULL,
+    data_de_nascimento       DATE NOT NULL,
+    cpf                      CHAR(11) UNIQUE NOT NULL,
+    rg                       VARCHAR(20),
+    endereco_completo        VARCHAR(255),
+    telefone_celular         VARCHAR(20),
+    email                    VARCHAR(100),
+    estado_civil             VARCHAR(20),
+    cargo_funcao             VARCHAR(50),
+    data_de_admissao         DATE NOT NULL,
+    salario                  DECIMAL(10, 2),
+    regime_de_contratacao    VARCHAR(20),
+    numero_do_pis            CHAR(11),
+    banco                    VARCHAR(50),
+    agencia                  VARCHAR(10),
+    conta_bancaria           VARCHAR(20),
+    exame_admissional        DATE
+);
