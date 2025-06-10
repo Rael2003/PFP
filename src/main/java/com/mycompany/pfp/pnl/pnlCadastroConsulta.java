@@ -4,6 +4,20 @@
  */
 package com.mycompany.pfp.pnl;
 
+import com.google.gson.Gson;
+import com.mycompany.pfp.model.Funcionario;
+import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
+import java.awt.*;
+import java.io.InputStreamReader;
+import java.io.Reader;
+import java.lang.reflect.Type;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.List;
+import com.google.gson.reflect.TypeToken;
+
+
 /**
  *
  * @author rsouz
@@ -15,6 +29,7 @@ public class pnlCadastroConsulta extends javax.swing.JPanel {
      */
     public pnlCadastroConsulta() {
         initComponents();
+        carregarDados();
     }
 
     /**
@@ -49,14 +64,22 @@ public class pnlCadastroConsulta extends javax.swing.JPanel {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.Double.class, java.lang.String.class
+            };
             boolean[] canEdit = new boolean [] {
                 false, false, false, false
             };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
+        TblLista.setName("modelo"); // NOI18N
         jScrollPane1.setViewportView(TblLista);
 
         btnNovo.setBackground(new java.awt.Color(96, 146, 112));
@@ -96,9 +119,49 @@ public class pnlCadastroConsulta extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovoActionPerformed
-        //SwitchPanel(this.pnlCadastroAlterar);
+        
     }//GEN-LAST:event_btnNovoActionPerformed
+    
+    private void carregarDados() {
+        SwingWorker<Void, Void> worker = new SwingWorker<>() {
+            @Override
+            protected Void doInBackground() {
+                try {
+                    URL url = new URL("http://localhost:8080/funcionarios");
+                    HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+                    conn.setRequestMethod("GET");
+                    conn.setRequestProperty("Accept", "application/json");
+                    
+                    if (conn.getResponseCode() == 200) {
+                        Reader reader = new InputStreamReader(conn.getInputStream());
+                        Type listType = new TypeToken<List<Funcionario>>(){}.getType();
+                        List<Funcionario> lista = new Gson().fromJson(reader, listType);
+                        
+                        DefaultTableModel modelo = (DefaultTableModel) TblLista.getModel();
+                        modelo.setRowCount(0); // limpa a tabela antes de adicionar
+                        for (Funcionario f : lista) {
+                            modelo.addRow(new Object[]{
+                                f.getNome_completo(),
+                                f.getCpf(),
+                                f.getSalario(),
+                                f.getCargo_funcao()
+                            });
+                        }
 
+                        reader.close();
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Erro ao buscar dados: " + conn.getResponseCode());
+                    }
+
+                    conn.disconnect();
+                } catch (Exception e) {
+                    JOptionPane.showMessageDialog(null, "Erro: " + e.getMessage());
+                }
+                return null;
+            }
+        };
+        worker.execute();
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable TblLista;
