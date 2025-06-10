@@ -36,40 +36,40 @@ public class pnlCadastroDigitar extends javax.swing.JPanel {
         btnConfirmar = new javax.swing.JButton();
         txtNome = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        txtDocumento = new javax.swing.JTextField();
+        txtCPF = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         txtDtNascimento = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         btnCancelar = new javax.swing.JButton();
-        txtDocumento1 = new javax.swing.JTextField();
+        txtRG = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        txtNome1 = new javax.swing.JTextField();
+        txtEndereco = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
-        txtDocumento2 = new javax.swing.JTextField();
+        txtTelefone = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
-        txtDocumento3 = new javax.swing.JTextField();
-        cboCargo1 = new javax.swing.JComboBox<>();
+        txtEmail = new javax.swing.JTextField();
+        cboEC = new javax.swing.JComboBox<>();
         jLabel11 = new javax.swing.JLabel();
-        cboCargo2 = new javax.swing.JComboBox<>();
-        txtDocumento4 = new javax.swing.JTextField();
+        cboRegime = new javax.swing.JComboBox<>();
+        txtSalario = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
-        txtNome3 = new javax.swing.JTextField();
+        txtAdmssao = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
         txtDocumento6 = new javax.swing.JTextField();
         jLabel18 = new javax.swing.JLabel();
-        txtDtNascimento1 = new javax.swing.JTextField();
+        txtPIS = new javax.swing.JTextField();
         jLabel19 = new javax.swing.JLabel();
-        txtDocumento5 = new javax.swing.JTextField();
+        txtBanco = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
-        txtDocumento7 = new javax.swing.JTextField();
+        txtAgencia = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
-        txtDocumento8 = new javax.swing.JTextField();
+        txtConta = new javax.swing.JTextField();
         jLabel20 = new javax.swing.JLabel();
-        txtDtNascimento2 = new javax.swing.JTextField();
-        txtDocumento9 = new javax.swing.JTextField();
+        txtAdmissional = new javax.swing.JTextField();
+        txtCargo = new javax.swing.JTextField();
 
         setMaximumSize(new java.awt.Dimension(1306, 780));
         setMinimumSize(new java.awt.Dimension(1306, 780));
@@ -89,6 +89,7 @@ public class pnlCadastroDigitar extends javax.swing.JPanel {
         });
 
         txtNome.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txtNome.setName(""); // NOI18N
         txtNome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNomeActionPerformed(evt);
@@ -98,10 +99,10 @@ public class pnlCadastroDigitar extends javax.swing.JPanel {
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel4.setText("CPF");
 
-        txtDocumento.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        txtDocumento.addActionListener(new java.awt.event.ActionListener() {
+        txtCPF.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txtCPF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtDocumentoActionPerformed(evt);
+                txtCPFActionPerformed(evt);
             }
         });
 
@@ -120,7 +121,12 @@ public class pnlCadastroDigitar extends javax.swing.JPanel {
             }
         });
 
-        txtDocumento1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txtRG.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txtRG.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtRGActionPerformed(evt);
+            }
+        });
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel7.setText("RG");
@@ -128,43 +134,43 @@ public class pnlCadastroDigitar extends javax.swing.JPanel {
         jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel8.setText("Endereço");
 
-        txtNome1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        txtNome1.addActionListener(new java.awt.event.ActionListener() {
+        txtEndereco.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txtEndereco.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNome1ActionPerformed(evt);
+                txtEnderecoActionPerformed(evt);
             }
         });
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel9.setText("Telefone");
 
-        txtDocumento2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txtTelefone.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel10.setText("E-mail");
 
-        txtDocumento3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txtEmail.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
-        cboCargo1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        cboCargo1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Solteiro", "Casado", "Divorciado", "Viúvo", "Separado", "União de facto" }));
-        cboCargo1.addActionListener(new java.awt.event.ActionListener() {
+        cboEC.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        cboEC.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Solteiro", "Casado", "Divorciado", "Viúvo", "Separado", "União de facto" }));
+        cboEC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cboCargo1ActionPerformed(evt);
+                cboECActionPerformed(evt);
             }
         });
 
         jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel11.setText("Estado Civil");
 
-        cboCargo2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        cboCargo2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "CLT", "PJ" }));
-        cboCargo2.addActionListener(new java.awt.event.ActionListener() {
+        cboRegime.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        cboRegime.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "CLT", "PJ" }));
+        cboRegime.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cboCargo2ActionPerformed(evt);
+                cboRegimeActionPerformed(evt);
             }
         });
 
-        txtDocumento4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txtSalario.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
         jLabel12.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel12.setText("Salário");
@@ -172,10 +178,10 @@ public class pnlCadastroDigitar extends javax.swing.JPanel {
         jLabel16.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel16.setText("Dt. Admissão");
 
-        txtNome3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        txtNome3.addActionListener(new java.awt.event.ActionListener() {
+        txtAdmssao.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txtAdmssao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNome3ActionPerformed(evt);
+                txtAdmssaoActionPerformed(evt);
             }
         });
 
@@ -187,17 +193,17 @@ public class pnlCadastroDigitar extends javax.swing.JPanel {
         jLabel18.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel18.setText("PIS");
 
-        txtDtNascimento1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txtPIS.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
         jLabel19.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel19.setText("Regime");
 
-        txtDocumento5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txtBanco.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
         jLabel13.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel13.setText("Agência");
 
-        txtDocumento7.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txtAgencia.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
         jLabel14.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel14.setText("Banco");
@@ -205,14 +211,14 @@ public class pnlCadastroDigitar extends javax.swing.JPanel {
         jLabel15.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel15.setText("Conta");
 
-        txtDocumento8.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txtConta.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
         jLabel20.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel20.setText("Exame Admissional");
 
-        txtDtNascimento2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txtAdmissional.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
-        txtDocumento9.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txtCargo.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -235,20 +241,20 @@ public class pnlCadastroDigitar extends javax.swing.JPanel {
                             .addComponent(jLabel11))
                         .addGap(100, 100, 100)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(cboCargo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cboEC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(txtNome1, javax.swing.GroupLayout.PREFERRED_SIZE, 445, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(txtDocumento2, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, 445, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                    .addComponent(txtDocumento3, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGap(282, 282, 282)))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 445, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtDocumento, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(txtDocumento1, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(txtRG, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(txtDtNascimento, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addGap(282, 282, 282)))
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -258,13 +264,13 @@ public class pnlCadastroDigitar extends javax.swing.JPanel {
                                             .addComponent(jLabel13))
                                         .addGap(100, 100, 100)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(txtDocumento5, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(txtDocumento7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                            .addComponent(txtBanco, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(txtAgencia, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(jLabel15)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(txtDocumento8, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addComponent(txtDocumento9, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(txtConta, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(txtCargo, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(layout.createSequentialGroup()
                             .addComponent(btnConfirmar)
@@ -280,14 +286,14 @@ public class pnlCadastroDigitar extends javax.swing.JPanel {
                                 .addComponent(jLabel16))
                             .addGap(69, 69, 69)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(txtNome3, javax.swing.GroupLayout.PREFERRED_SIZE, 445, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtAdmssao, javax.swing.GroupLayout.PREFERRED_SIZE, 445, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(txtDocumento6, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(txtDocumento4, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(txtDtNascimento1, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(cboCargo2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(txtDtNascimento2, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(txtSalario, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(txtPIS, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(cboRegime, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(txtAdmissional, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGap(282, 282, 282))))))
                 .addContainerGap(240, Short.MAX_VALUE))
         );
@@ -305,19 +311,19 @@ public class pnlCadastroDigitar extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(txtDocumento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel4))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(txtDocumento1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtRG, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel7)))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(txtDocumento5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtBanco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel14))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(txtDocumento7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtAgencia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel13))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -328,51 +334,51 @@ public class pnlCadastroDigitar extends javax.swing.JPanel {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel6)
-                                    .addComponent(txtDocumento9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(txtCargo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(txtDocumento8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtConta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(37, 37, 37))
                             .addComponent(jLabel15, javax.swing.GroupLayout.Alignment.LEADING))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel8)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(txtNome1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtDocumento2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel9))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtDocumento3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel10))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cboCargo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cboEC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel11))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(txtNome3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtAdmssao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txtDocumento6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel17))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtDocumento4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtSalario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel12))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtDtNascimento1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtPIS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel18))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(cboCargo2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cboRegime, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel19))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtDtNascimento2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtAdmissional, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel20))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -387,7 +393,44 @@ public class pnlCadastroDigitar extends javax.swing.JPanel {
 
     private void btnConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmarActionPerformed
         try{
-            String jsonInputString = String.format("{\"nome\":\"%s\", \"email\":\"%s\"}","nome","Teste");
+            String json = String.format(
+                "{" +
+                "\"nome_completo\":\"%s\"," +
+                "\"data_de_nascimento\":\"%s\"," +
+                "\"cpf\":\"%s\"," +
+                "\"rg\":\"%s\"," +
+                "\"endereco_completo\":\"%s\"," +
+                "\"telefone_celular\":\"%s\"," +
+                "\"email\":\"%s\"," +
+                "\"estado_civil\":\"%s\"," +
+                "\"cargo_funcao\":\"%s\"," +
+                "\"data_de_admissao\":\"%s\"," +
+                "\"salario\":%.2f," +
+                "\"regime_de_contratacao\":\"%s\"," +
+                "\"numero_do_pis\":\"%s\"," +
+                "\"banco\":\"%s\"," +
+                "\"agencia\":\"%s\"," +
+                "\"conta_bancaria\":\"%s\"," +
+                "\"exame_admissional\":\"%s\"" +
+                "}",
+                txtNome.getText(),           // nome_completo
+                txtDtNascimento.getText(),               // data_de_nascimento
+                txtCPF.getText(),              // cpf
+                txtRG.getText(),                  // rg
+                txtEndereco.getText(), // endereco_completo
+                txtTelefone.getText(),              // telefone_celular
+                txtEmail.getText(),     // email
+                cboEC.getSelectedItem().toString(),                 // estado_civil
+                txtCargo.getText(),            // cargo_funcao
+                txtAdmssao.getText(),               // data_de_admissao
+                txtSalario.getText(),                    // salario
+                cboRegime.getSelectedItem().toString(),                      // regime_de_contratacao
+                txtPIS.getText(),              // numero_do_pis
+                txtBanco.getText(),          // banco
+                txtAgencia.getText(),                     // agencia
+                txtConta.getText(),                 // conta_bancaria
+                txtAdmissional.getText()                // exame_admissional
+            );
 
             URL url = new URL("http://localhost:8080/funcionarios"); // ajuste para o endpoint correto
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -397,7 +440,7 @@ public class pnlCadastroDigitar extends javax.swing.JPanel {
             conn.setDoOutput(true);
 
             try (OutputStream os = conn.getOutputStream()) {
-                byte[] input = jsonInputString.getBytes("utf-8");
+                byte[] input = json.getBytes("utf-8");
                 os.write(input, 0, input.length);
             }
 
@@ -424,32 +467,36 @@ public class pnlCadastroDigitar extends javax.swing.JPanel {
         this.setVisible(false);
     }//GEN-LAST:event_btnCancelarActionPerformed
 
-    private void txtNome1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNome1ActionPerformed
+    private void txtEnderecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEnderecoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtNome1ActionPerformed
+    }//GEN-LAST:event_txtEnderecoActionPerformed
 
-    private void cboCargo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboCargo1ActionPerformed
+    private void cboECActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboECActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_cboCargo1ActionPerformed
+    }//GEN-LAST:event_cboECActionPerformed
 
-    private void cboCargo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboCargo2ActionPerformed
+    private void cboRegimeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboRegimeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_cboCargo2ActionPerformed
+    }//GEN-LAST:event_cboRegimeActionPerformed
 
-    private void txtNome3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNome3ActionPerformed
+    private void txtAdmssaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAdmssaoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtNome3ActionPerformed
+    }//GEN-LAST:event_txtAdmssaoActionPerformed
 
-    private void txtDocumentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDocumentoActionPerformed
+    private void txtCPFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCPFActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtDocumentoActionPerformed
+    }//GEN-LAST:event_txtCPFActionPerformed
+
+    private void txtRGActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtRGActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtRGActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnConfirmar;
-    private javax.swing.JComboBox<String> cboCargo1;
-    private javax.swing.JComboBox<String> cboCargo2;
+    private javax.swing.JComboBox<String> cboEC;
+    private javax.swing.JComboBox<String> cboRegime;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -469,21 +516,21 @@ public class pnlCadastroDigitar extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JTextField txtDocumento;
-    private javax.swing.JTextField txtDocumento1;
-    private javax.swing.JTextField txtDocumento2;
-    private javax.swing.JTextField txtDocumento3;
-    private javax.swing.JTextField txtDocumento4;
-    private javax.swing.JTextField txtDocumento5;
+    private javax.swing.JTextField txtAdmissional;
+    private javax.swing.JTextField txtAdmssao;
+    private javax.swing.JTextField txtAgencia;
+    private javax.swing.JTextField txtBanco;
+    private javax.swing.JTextField txtCPF;
+    private javax.swing.JTextField txtCargo;
+    private javax.swing.JTextField txtConta;
     private javax.swing.JTextField txtDocumento6;
-    private javax.swing.JTextField txtDocumento7;
-    private javax.swing.JTextField txtDocumento8;
-    private javax.swing.JTextField txtDocumento9;
     private javax.swing.JTextField txtDtNascimento;
-    private javax.swing.JTextField txtDtNascimento1;
-    private javax.swing.JTextField txtDtNascimento2;
+    private javax.swing.JTextField txtEmail;
+    private javax.swing.JTextField txtEndereco;
     private javax.swing.JTextField txtNome;
-    private javax.swing.JTextField txtNome1;
-    private javax.swing.JTextField txtNome3;
+    private javax.swing.JTextField txtPIS;
+    private javax.swing.JTextField txtRG;
+    private javax.swing.JTextField txtSalario;
+    private javax.swing.JTextField txtTelefone;
     // End of variables declaration//GEN-END:variables
 }
