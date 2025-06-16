@@ -4,6 +4,19 @@
  */
 package com.mycompany.pfp.pnl;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+import com.mycompany.pfp.model.Funcionario;
+import java.io.InputStreamReader;
+import java.io.Reader;
+import java.lang.reflect.Type;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.List;
+import javax.swing.JOptionPane;
+import javax.swing.SwingWorker;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author rsouz
@@ -15,6 +28,59 @@ public class pnlInicio extends javax.swing.JPanel {
      */
     public pnlInicio() {
         initComponents();
+        carregarDados();
+    }
+    
+    private void carregarDados() {
+        SwingWorker<Void, Void> worker = new SwingWorker<>() {
+            @Override
+            protected Void doInBackground() {
+                try {
+                    URL url = new URL("http://localhost:8080/projetosUrgentes");
+                    HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+                    conn.setRequestMethod("GET");
+                    conn.setRequestProperty("Accept", "application/json");
+                    
+                    if (conn.getResponseCode() == 200) {
+                        Reader reader = new InputStreamReader(conn.getInputStream());
+                        Type listType = new TypeToken<List<Projetos>>(){}.getType();
+                        List<Projetos> lista = new Gson().fromJson(reader, listType);
+                        
+                        DefaultTableModel modelo = (DefaultTableModel) TblUrgentes.getModel();
+                        modelo.setRowCount(0); // limpa a tabela antes de adicionar
+                        for (Projetos f : lista) {
+                            modelo.addRow(new Object[]{
+                                f.empresaCliente,
+                                f.funcionarioResponsavel,
+                                f.dataPrevisaoEntrega
+                            });
+                        }
+
+                        reader.close();
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Erro ao buscar dados: " + conn.getResponseCode());
+                    }
+
+                    conn.disconnect();
+                } catch (Exception e) {
+                    JOptionPane.showMessageDialog(null, "Erro: " + e.getMessage());
+                }
+                return null;
+            }
+        };
+        worker.execute();
+    }
+    
+    public class Projetos{
+        String nomeProjeto;
+        String dataInicio;
+        String dataPrevisaoEntrega;
+        String status;
+        String prioridade;
+        Long empresaClienteId;
+        String empresaCliente;
+        Long funcionarioResponsavelId;
+        String funcionarioResponsavel;
     }
 
     /**
@@ -27,7 +93,7 @@ public class pnlInicio extends javax.swing.JPanel {
     private void initComponents() {
 
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        TblUrgentes = new javax.swing.JTable();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
@@ -40,7 +106,7 @@ public class pnlInicio extends javax.swing.JPanel {
         setMinimumSize(new java.awt.Dimension(1306, 780));
         setPreferredSize(new java.awt.Dimension(1306, 780));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        TblUrgentes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -51,8 +117,8 @@ public class pnlInicio extends javax.swing.JPanel {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jTable1.setName("grdUrgentes"); // NOI18N
-        jScrollPane2.setViewportView(jTable1);
+        TblUrgentes.setName("grdUrgentes"); // NOI18N
+        jScrollPane2.setViewportView(TblUrgentes);
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         jLabel7.setText("Urgentes");
@@ -134,13 +200,13 @@ public class pnlInicio extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable TblUrgentes;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
     // End of variables declaration//GEN-END:variables

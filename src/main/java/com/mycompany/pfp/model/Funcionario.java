@@ -5,7 +5,6 @@
 package com.mycompany.pfp.model;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
 
 /**
  *
@@ -132,7 +131,10 @@ public class Funcionario {
     public void setConta_bancaria(String conta_bancaria) {
         this.conta_bancaria = conta_bancaria;
     }
-
-    
-    
+    public String getExame_admissional() {
+        return exame_admissional;
+    }
+    public void setExame_admissional(String conta_bancaria) {
+        this.conta_bancaria = conta_bancaria;
+    }    
 }
