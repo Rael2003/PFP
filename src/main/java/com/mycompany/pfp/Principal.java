@@ -6,6 +6,7 @@ package com.mycompany.pfp;
 
 import com.mycompany.pfp.pnl.pnlAtribuicaoConsulta;
 import com.mycompany.pfp.pnl.pnlCadastroConsulta;
+import com.mycompany.pfp.pnl.pnlEstoqueConsulta;
 import com.mycompany.pfp.pnl.pnlInicio;
 import java.awt.CardLayout;
 import javax.swing.JPanel;
@@ -256,7 +257,7 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnRegistroActionPerformed
 
     private void btnEstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEstoqueActionPerformed
-        // TODO add your handling code here:
+        SwitchPanel("pnlEstoqueConsulta",new pnlEstoqueConsulta());
     }//GEN-LAST:event_btnEstoqueActionPerformed
 
     private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed

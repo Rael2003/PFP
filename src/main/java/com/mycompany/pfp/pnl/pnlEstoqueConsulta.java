@@ -4,6 +4,19 @@
  */
 package com.mycompany.pfp.pnl;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+import com.mycompany.pfp.model.Funcionario;
+import java.io.InputStreamReader;
+import java.io.Reader;
+import java.lang.reflect.Type;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.List;
+import javax.swing.JOptionPane;
+import javax.swing.SwingWorker;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author rsouz
@@ -15,8 +28,62 @@ public class pnlEstoqueConsulta extends javax.swing.JPanel {
      */
     public pnlEstoqueConsulta() {
         initComponents();
+        carregarDados();
     }
+    
+    private void carregarDados() {
+        SwingWorker<Void, Void> worker = new SwingWorker<>() {
+            @Override
+            protected Void doInBackground() {
+                try {
+                    URL url = new URL("http://localhost:8080/estoque");
+                    HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+                    conn.setRequestMethod("GET");
+                    conn.setRequestProperty("Accept", "application/json");
+                    
+                    if (conn.getResponseCode() == 200) {
+                        Reader reader = new InputStreamReader(conn.getInputStream());
+                        Type listType = new TypeToken<List<Estoque>>(){}.getType();
+                        List<Estoque> lista = new Gson().fromJson(reader, listType);
+                        
+                        DefaultTableModel modelo = (DefaultTableModel) TblLista.getModel();
+                        modelo.setRowCount(0); // limpa a tabela antes de adicionar
+                        for (Estoque f : lista) {
+                            modelo.addRow(new Object[]{
+                                f.nomeProduto,
+                                f.quantidade,
+                                f.unidadeMedida,
+                                f.validade
+                            });
+                        }
 
+                        reader.close();
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Erro ao buscar dados: " + conn.getResponseCode());
+                    }
+
+                    conn.disconnect();
+                } catch (Exception e) {
+                    JOptionPane.showMessageDialog(null, "Erro: " + e.getMessage());
+                }
+                return null;
+            }
+        };
+        worker.execute();
+    }
+    
+    public class Estoque{
+        long id;
+        String nomeProduto;
+        String descricao;
+        String categoria;
+        String unidadeMedida;
+        long quantidade;
+        float precoCusto;
+        String fornecedor;
+        String dataEntrada;
+        String validade;
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -49,9 +116,16 @@ public class pnlEstoqueConsulta extends javax.swing.JPanel {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
             boolean[] canEdit = new boolean [] {
                 false, false, false, false
             };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];

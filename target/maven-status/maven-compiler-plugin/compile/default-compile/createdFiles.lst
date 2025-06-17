@@ -1,5 +1,6 @@
 com\mycompany\pfp\model\Funcionario.class
 com\mycompany\pfp\pnl\pnlEstoqueConsulta$2.class
+com\mycompany\pfp\pnl\pnlEstoqueConsulta$Estoque.class
 com\mycompany\pfp\Principal$9.class
 com\mycompany\pfp\pnl\pnlCadastroDigitar$4.class
 com\mycompany\pfp\pnl\pnlRegistroConsulta.class
@@ -14,6 +15,7 @@ com\mycompany\pfp\pnl\pnlCadastroConsulta.class
 com\mycompany\pfp\pnl\pnlCadastroDigitar$1.class
 com\mycompany\pfp\pnl\pnlInicio$1.class
 com\mycompany\pfp\pnl\pnlCadastroDigitar$3.class
+com\mycompany\pfp\pnl\pnlEstoqueConsulta$3.class
 com\mycompany\pfp\pnl\pnlCadastroConsulta$3.class
 com\mycompany\pfp\Principal$8.class
 com\mycompany\pfp\pnl\pnlEstoqueConsulta.class
@@ -35,6 +37,7 @@ com\mycompany\pfp\pnl\pnlCadastroDigitar$9.class
 com\mycompany\pfp\Principal$7.class
 com\mycompany\pfp\pnl\pnlCadastroDigitar$2.class
 com\mycompany\pfp\pnl\pnlCadastroConsulta$2.class
+com\mycompany\pfp\pnl\pnlEstoqueConsulta$1$1.class
 com\mycompany\pfp\pnl\pnlInicio.class
 com\mycompany\pfp\SideMenuPanel$2.class
 com\mycompany\pfp\pnl\pnlAtribuicaoConsulta$2.class
