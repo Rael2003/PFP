@@ -11,6 +11,7 @@ com\mycompany\pfp\Pfp$2.class
 com\mycompany\pfp\pnl\pnlRegistroDigitar.class
 com\mycompany\pfp\Principal.class
 com\mycompany\pfp\Principal$6.class
+com\mycompany\pfp\pnl\pnlAtribuicaoConsulta$Atribuicao.class
 com\mycompany\pfp\pnl\pnlCadastroConsulta.class
 com\mycompany\pfp\pnl\pnlCadastroDigitar$1.class
 com\mycompany\pfp\pnl\pnlInicio$1.class
@@ -48,8 +49,10 @@ com\mycompany\pfp\pnl\pnlEstoqueDigitar$2.class
 com\mycompany\pfp\pnl\pnlEstoqueDigitar.class
 com\mycompany\pfp\Principal$10.class
 com\mycompany\pfp\Principal$3.class
+com\mycompany\pfp\pnl\pnlAtribuicaoConsulta$1$1.class
 com\mycompany\pfp\pnl\pnlInicio$Projetos.class
 com\mycompany\pfp\Principal$1.class
+com\mycompany\pfp\pnl\pnlAtribuicaoConsulta$3.class
 com\mycompany\pfp\pnl\pnlInicio$1$1.class
 com\mycompany\pfp\Pfp.class
 com\mycompany\pfp\pnl\pnlCadastroConsulta$1.class

@@ -4,6 +4,18 @@
  */
 package com.mycompany.pfp.pnl;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+import java.io.InputStreamReader;
+import java.io.Reader;
+import java.lang.reflect.Type;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.List;
+import javax.swing.JOptionPane;
+import javax.swing.SwingWorker;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author rsouz
@@ -15,8 +27,64 @@ public class pnlAtribuicaoConsulta extends javax.swing.JPanel {
      */
     public pnlAtribuicaoConsulta() {
         initComponents();
+        carregarDados();
     }
+    
+    private void carregarDados() {
+        SwingWorker<Void, Void> worker = new SwingWorker<>() {
+            @Override
+            protected Void doInBackground() {
+                try {
+                    URL url = new URL("http://localhost:8080/projetosAtribuicao");
+                    HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+                    conn.setRequestMethod("GET");
+                    conn.setRequestProperty("Accept", "application/json");
+                    
+                    if (conn.getResponseCode() == 200) {
+                        Reader reader = new InputStreamReader(conn.getInputStream());
+                        Type listType = new TypeToken<List<pnlAtribuicaoConsulta.Atribuicao>>(){}.getType();
+                        List<pnlAtribuicaoConsulta.Atribuicao> lista = new Gson().fromJson(reader, listType);
+                        
+                        DefaultTableModel modelo = (DefaultTableModel) TblLista.getModel();
+                        modelo.setRowCount(0); // limpa a tabela antes de adicionar
+                        for (pnlAtribuicaoConsulta.Atribuicao f : lista) {
+                            modelo.addRow(new Object[]{
+                                f.empresaCliente,
+                                f.funcionarioResponsavel,
+                                f.titulo_item,
+                                f.quantidade
+                            });
+                        }
 
+                        reader.close();
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Erro ao buscar dados: " + conn.getResponseCode());
+                    }
+
+                    conn.disconnect();
+                } catch (Exception e) {
+                    JOptionPane.showMessageDialog(null, "Erro: " + e.getMessage());
+                }
+                return null;
+            }
+        };
+        worker.execute();
+    }
+    
+    public class Atribuicao{
+        String nomeProjeto;
+        String dataInicio;
+        String dataPrevisaoEntrega;
+        String status;
+        long empresaClienteId;
+        String empresaCliente;
+        long funcionarioResponsavelId;
+        String funcionarioResponsavel;
+        long projetoItemId;
+        String titulo_item;
+        Integer quantidade;
+                
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -28,7 +96,7 @@ public class pnlAtribuicaoConsulta extends javax.swing.JPanel {
 
         jLabel11 = new javax.swing.JLabel();
         jScrollPane6 = new javax.swing.JScrollPane();
-        TblLista2 = new javax.swing.JTable();
+        TblLista = new javax.swing.JTable();
         btnNovo2 = new javax.swing.JButton();
 
         setMaximumSize(new java.awt.Dimension(1306, 780));
@@ -37,7 +105,7 @@ public class pnlAtribuicaoConsulta extends javax.swing.JPanel {
         jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         jLabel11.setText("Atribuição");
 
-        TblLista2.setModel(new javax.swing.table.DefaultTableModel(
+        TblLista.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -56,7 +124,7 @@ public class pnlAtribuicaoConsulta extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane6.setViewportView(TblLista2);
+        jScrollPane6.setViewportView(TblLista);
 
         btnNovo2.setBackground(new java.awt.Color(96, 146, 112));
         btnNovo2.setText("Novo");
@@ -99,7 +167,7 @@ public class pnlAtribuicaoConsulta extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTable TblLista2;
+    private javax.swing.JTable TblLista;
     private javax.swing.JButton btnNovo2;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JScrollPane jScrollPane6;
