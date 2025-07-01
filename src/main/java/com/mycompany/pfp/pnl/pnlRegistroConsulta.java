@@ -4,6 +4,18 @@
  */
 package com.mycompany.pfp.pnl;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+import java.io.InputStreamReader;
+import java.io.Reader;
+import java.lang.reflect.Type;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.List;
+import javax.swing.JOptionPane;
+import javax.swing.SwingWorker;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author rsouz
@@ -15,6 +27,63 @@ public class pnlRegistroConsulta extends javax.swing.JPanel {
      */
     public pnlRegistroConsulta() {
         initComponents();
+        carregarDados();
+    }
+    
+    private void carregarDados() {
+        SwingWorker<Void, Void> worker = new SwingWorker<>() {
+            @Override
+            protected Void doInBackground() {
+                try {
+                    URL url = new URL("http://localhost:8080/projetosAtribuicao");
+                    HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+                    conn.setRequestMethod("GET");
+                    conn.setRequestProperty("Accept", "application/json");
+                    
+                    if (conn.getResponseCode() == 200) {
+                        Reader reader = new InputStreamReader(conn.getInputStream());
+                        Type listType = new TypeToken<List<pnlAtribuicaoConsulta.Atribuicao>>(){}.getType();
+                        List<pnlAtribuicaoConsulta.Atribuicao> lista = new Gson().fromJson(reader, listType);
+                        
+                        DefaultTableModel modelo = (DefaultTableModel) TblLista.getModel();
+                        modelo.setRowCount(0); // limpa a tabela antes de adicionar
+                        for (pnlAtribuicaoConsulta.Atribuicao f : lista) {
+                            modelo.addRow(new Object[]{
+                                f.empresaCliente,
+                                f.funcionarioResponsavel,
+                                f.dataPrevisaoEntrega,
+                                f.quantidade
+                            });
+                        }
+
+                        reader.close();
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Erro ao buscar dados: " + conn.getResponseCode());
+                    }
+
+                    conn.disconnect();
+                } catch (Exception e) {
+                    JOptionPane.showMessageDialog(null, "Erro: " + e.getMessage());
+                }
+                return null;
+            }
+        };
+        worker.execute();
+    }
+    
+    public class Atribuicao{
+        String nomeProjeto;
+        String dataInicio;
+        String dataPrevisaoEntrega;
+        String status;
+        long empresaClienteId;
+        String empresaCliente;
+        long funcionarioResponsavelId;
+        String funcionarioResponsavel;
+        long projetoItemId;
+        String titulo_item;
+        Integer quantidade;
+                
     }
 
     /**
@@ -28,7 +97,7 @@ public class pnlRegistroConsulta extends javax.swing.JPanel {
 
         jLabel10 = new javax.swing.JLabel();
         jScrollPane5 = new javax.swing.JScrollPane();
-        TblLista1 = new javax.swing.JTable();
+        TblLista = new javax.swing.JTable();
 
         setMaximumSize(new java.awt.Dimension(1306, 780));
         setMinimumSize(new java.awt.Dimension(1306, 780));
@@ -37,7 +106,7 @@ public class pnlRegistroConsulta extends javax.swing.JPanel {
         jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         jLabel10.setText("Registro");
 
-        TblLista1.setModel(new javax.swing.table.DefaultTableModel(
+        TblLista.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -48,15 +117,22 @@ public class pnlRegistroConsulta extends javax.swing.JPanel {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
             boolean[] canEdit = new boolean [] {
                 false, false, false, false
             };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane5.setViewportView(TblLista1);
+        jScrollPane5.setViewportView(TblLista);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -85,7 +161,7 @@ public class pnlRegistroConsulta extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTable TblLista1;
+    private javax.swing.JTable TblLista;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JScrollPane jScrollPane5;
     // End of variables declaration//GEN-END:variables

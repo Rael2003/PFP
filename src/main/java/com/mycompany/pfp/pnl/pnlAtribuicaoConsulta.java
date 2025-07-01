@@ -97,7 +97,6 @@ public class pnlAtribuicaoConsulta extends javax.swing.JPanel {
         jLabel11 = new javax.swing.JLabel();
         jScrollPane6 = new javax.swing.JScrollPane();
         TblLista = new javax.swing.JTable();
-        btnNovo2 = new javax.swing.JButton();
 
         setMaximumSize(new java.awt.Dimension(1306, 780));
         setMinimumSize(new java.awt.Dimension(1306, 780));
@@ -126,14 +125,6 @@ public class pnlAtribuicaoConsulta extends javax.swing.JPanel {
         });
         jScrollPane6.setViewportView(TblLista);
 
-        btnNovo2.setBackground(new java.awt.Color(96, 146, 112));
-        btnNovo2.setText("Novo");
-        btnNovo2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnNovo2ActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -144,31 +135,23 @@ public class pnlAtribuicaoConsulta extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel11)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnNovo2, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel11)
-                    .addComponent(btnNovo2, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jLabel11)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 703, Short.MAX_VALUE)
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 714, Short.MAX_VALUE)
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnNovo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovo2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnNovo2ActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable TblLista;
-    private javax.swing.JButton btnNovo2;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JScrollPane jScrollPane6;
     // End of variables declaration//GEN-END:variables
