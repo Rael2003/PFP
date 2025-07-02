@@ -1,4 +1,5 @@
 com\mycompany\pfp\model\Funcionario.class
+com\mycompany\pfp\pnl\pnlCadastroConsulta$4.class
 com\mycompany\pfp\pnl\pnlEstoqueConsulta$2.class
 com\mycompany\pfp\pnl\pnlRegistroConsulta$Atribuicao.class
 com\mycompany\pfp\pnl\pnlEstoqueConsulta$Estoque.class
@@ -7,8 +8,9 @@ com\mycompany\pfp\pnl\pnlCadastroDigitar$4.class
 com\mycompany\pfp\pnl\pnlRegistroConsulta.class
 com\mycompany\pfp\pnl\pnlEstoqueDigitar$4.class
 com\mycompany\pfp\pnl\pnlRegistroDigitar$Atribuicao.class
-com\mycompany\pfp\pnl\pnlCadastroConsulta$3$1.class
+com\mycompany\pfp\pnl\pnlCadastroDigitar$1$1.class
 com\mycompany\pfp\Pontos$2.class
+com\mycompany\pfp\pnl\pnlCadastroDigitar$10.class
 com\mycompany\pfp\Pfp$2.class
 com\mycompany\pfp\pnl\pnlRegistroConsulta$2.class
 com\mycompany\pfp\pnl\pnlRegistroDigitar.class
@@ -63,6 +65,7 @@ com\mycompany\pfp\Principal$1.class
 com\mycompany\pfp\pnl\pnlInicio$1$1.class
 com\mycompany\pfp\Pfp.class
 com\mycompany\pfp\pnl\pnlCadastroConsulta$1.class
+com\mycompany\pfp\pnl\pnlCadastroConsulta$4$1.class
 com\mycompany\pfp\Pontos.class
 com\mycompany\pfp\pnl\pnlCadastroDigitar$8.class
 com\mycompany\pfp\pnl\pnlEstoqueConsulta$1.class

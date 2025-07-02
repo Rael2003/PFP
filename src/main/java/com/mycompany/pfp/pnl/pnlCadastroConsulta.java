@@ -16,6 +16,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.List;
 import com.google.gson.reflect.TypeToken;
+import com.mycompany.pfp.Principal;
 
 
 /**
@@ -27,8 +28,12 @@ public class pnlCadastroConsulta extends javax.swing.JPanel {
     /**
      * Creates new form pnlCadastroConsulta
      */
-    public pnlCadastroConsulta() {
+    private Principal principal;
+    private List<Funcionario> func;
+    
+    public pnlCadastroConsulta(Principal principal) {
         initComponents();
+        this.principal = principal;
         carregarDados();
     }
 
@@ -80,6 +85,11 @@ public class pnlCadastroConsulta extends javax.swing.JPanel {
             }
         });
         TblLista.setName("modelo"); // NOI18N
+        TblLista.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TblListaMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(TblLista);
 
         btnNovo.setBackground(new java.awt.Color(96, 146, 112));
@@ -119,8 +129,18 @@ public class pnlCadastroConsulta extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovoActionPerformed
-        
+        principal.SwitchPanel("pnlCadastroDigitar",new pnlCadastroDigitar(principal,0));
     }//GEN-LAST:event_btnNovoActionPerformed
+
+    private void TblListaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TblListaMouseClicked
+        if (evt.getClickCount() == 2 && SwingUtilities.isLeftMouseButton(evt)) {
+            JTable tabela = (JTable) evt.getSource();
+            int linha = tabela.rowAtPoint(evt.getPoint());
+            int modelRow = tabela.convertRowIndexToModel(linha);
+            Funcionario selecionado = func.get(modelRow);
+            principal.SwitchPanel("pnlCadastroDigitar",new pnlCadastroDigitar(principal,selecionado.getId()));
+        }
+    }//GEN-LAST:event_TblListaMouseClicked
     
     private void carregarDados() {
         SwingWorker<Void, Void> worker = new SwingWorker<>() {
@@ -136,6 +156,7 @@ public class pnlCadastroConsulta extends javax.swing.JPanel {
                         Reader reader = new InputStreamReader(conn.getInputStream());
                         Type listType = new TypeToken<List<Funcionario>>(){}.getType();
                         List<Funcionario> lista = new Gson().fromJson(reader, listType);
+                        func = lista;
                         
                         DefaultTableModel modelo = (DefaultTableModel) TblLista.getModel();
                         modelo.setRowCount(0); // limpa a tabela antes de adicionar
@@ -162,7 +183,8 @@ public class pnlCadastroConsulta extends javax.swing.JPanel {
         };
         worker.execute();
     }
-
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable TblLista;
     private javax.swing.JButton btnNovo;

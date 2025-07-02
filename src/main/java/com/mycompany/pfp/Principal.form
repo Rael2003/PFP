@@ -139,7 +139,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="btnCadastro">
           <Properties>
-            <Property name="text" type="java.lang.String" value="C"/>
+            <Property name="text" type="java.lang.String" value="Cad"/>
             <Property name="horizontalTextPosition" type="int" value="0"/>
           </Properties>
           <Events>
@@ -150,7 +150,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="btnAtribuicao">
           <Properties>
-            <Property name="text" type="java.lang.String" value="A"/>
+            <Property name="text" type="java.lang.String" value="Atr"/>
             <Property name="horizontalTextPosition" type="int" value="0"/>
           </Properties>
           <Events>
@@ -160,7 +160,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="btnRegistro">
           <Properties>
-            <Property name="text" type="java.lang.String" value="R"/>
+            <Property name="text" type="java.lang.String" value="Reg"/>
             <Property name="horizontalTextPosition" type="int" value="0"/>
           </Properties>
           <Events>
@@ -170,7 +170,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="btnEstoque">
           <Properties>
-            <Property name="text" type="java.lang.String" value="E"/>
+            <Property name="text" type="java.lang.String" value="Est"/>
             <Property name="horizontalTextPosition" type="int" value="0"/>
           </Properties>
           <Events>

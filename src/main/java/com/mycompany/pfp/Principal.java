@@ -124,7 +124,7 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
-        btnCadastro.setText("C");
+        btnCadastro.setText("Cad");
         btnCadastro.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnCadastro.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -140,7 +140,7 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
-        btnAtribuicao.setText("A");
+        btnAtribuicao.setText("Atr");
         btnAtribuicao.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnAtribuicao.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -153,7 +153,7 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
-        btnRegistro.setText("R");
+        btnRegistro.setText("Reg");
         btnRegistro.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnRegistro.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -166,7 +166,7 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
-        btnEstoque.setText("E");
+        btnEstoque.setText("Est");
         btnEstoque.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnEstoque.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -260,7 +260,7 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_sidebarFocusLost
 
     private void btnCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastroActionPerformed
-        SwitchPanel("pnlCadastroConsulta",new pnlCadastroConsulta());
+        SwitchPanel("pnlCadastroConsulta",new pnlCadastroConsulta(this));
     }//GEN-LAST:event_btnCadastroActionPerformed
 
     private void btnAtribuicaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtribuicaoActionPerformed
