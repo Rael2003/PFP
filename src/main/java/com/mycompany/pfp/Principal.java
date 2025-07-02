@@ -22,6 +22,7 @@ public class Principal extends javax.swing.JFrame {
     
     public Principal() {
         initComponents();
+        this.setExtendedState(MAXIMIZED_BOTH);
         
         //inicia side menu
         sp = new SideMenuPanel(this);
@@ -37,6 +38,22 @@ public class Principal extends javax.swing.JFrame {
         mainPanel.setLayout(new CardLayout());
         SwitchPanel( "pnlInicio", new pnlInicio());
         
+    }
+    
+    public void AbreSide(){
+        sp.openMenu();
+        btnEstoque.setText("Estoque");
+        btnCadastro.setText("Cadastro");
+        btnAtribuicao.setText("Atribuição");
+        btnRegistro.setText("Registro");
+    }
+    
+    public void FechaSide(){
+        sp.closeMenu();
+        btnEstoque.setText("Est");
+        btnCadastro.setText("Cad");
+        btnAtribuicao.setText("Atr");
+        btnRegistro.setText("Reg");
     }
     
     public void SwitchPanel(String panelName, JPanel panel){
@@ -59,9 +76,6 @@ public class Principal extends javax.swing.JFrame {
         btnSair = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(1366, 768));
-        setMinimumSize(new java.awt.Dimension(1366, 768));
-        setPreferredSize(new java.awt.Dimension(1366, 768));
 
         mainPanel.setBackground(new java.awt.Color(204, 204, 204));
         mainPanel.setMaximumSize(new java.awt.Dimension(1306, 780));
@@ -77,7 +91,7 @@ public class Principal extends javax.swing.JFrame {
         );
         mainPanelLayout.setVerticalGroup(
             mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 3132, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
 
         sidebar.setBackground(new java.awt.Color(48, 80, 58));
@@ -166,7 +180,7 @@ public class Principal extends javax.swing.JFrame {
         });
 
         btnSair.setBackground(new java.awt.Color(96, 146, 112));
-        btnSair.setText("S");
+        btnSair.setText("Sair");
         btnSair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSairActionPerformed(evt);
@@ -204,7 +218,7 @@ public class Principal extends javax.swing.JFrame {
                 .addComponent(btnRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 2814, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 2732, Short.MAX_VALUE)
                 .addComponent(btnSair, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -222,27 +236,27 @@ public class Principal extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 3050, Short.MAX_VALUE)
             .addComponent(sidebar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 3132, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void sidebarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sidebarMouseEntered
-        sp.openMenu();
+        AbreSide();
     }//GEN-LAST:event_sidebarMouseEntered
 
     private void sidebarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sidebarMouseExited
-        sp.closeMenu();
+        FechaSide();
     }//GEN-LAST:event_sidebarMouseExited
 
     private void sidebarFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_sidebarFocusGained
-        sp.openMenu();
+        AbreSide();
     }//GEN-LAST:event_sidebarFocusGained
 
     private void sidebarFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_sidebarFocusLost
-        sp.closeMenu();
+        FechaSide();
     }//GEN-LAST:event_sidebarFocusLost
 
     private void btnCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastroActionPerformed
@@ -270,7 +284,7 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_lblLogoMouseClicked
 
     private void btnCadastroMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCadastroMouseEntered
-        sp.openMenu();
+        AbreSide();
     }//GEN-LAST:event_btnCadastroMouseEntered
 
     private void btnCadastroMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCadastroMouseExited
@@ -278,19 +292,19 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCadastroMouseExited
 
     private void btnAtribuicaoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAtribuicaoMouseEntered
-        sp.openMenu();
+        AbreSide();
     }//GEN-LAST:event_btnAtribuicaoMouseEntered
 
     private void btnRegistroMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRegistroMouseEntered
-        sp.openMenu();
+        AbreSide();
     }//GEN-LAST:event_btnRegistroMouseEntered
 
     private void btnEstoqueMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEstoqueMouseEntered
-        sp.openMenu();
+        AbreSide();
     }//GEN-LAST:event_btnEstoqueMouseEntered
 
     private void lblLogoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLogoMouseEntered
-        sp.openMenu();
+        AbreSide();
     }//GEN-LAST:event_lblLogoMouseEntered
 
     /**
