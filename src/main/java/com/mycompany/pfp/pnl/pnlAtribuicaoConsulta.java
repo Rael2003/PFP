@@ -35,7 +35,7 @@ public class pnlAtribuicaoConsulta extends javax.swing.JPanel {
             @Override
             protected Void doInBackground() {
                 try {
-                    URL url = new URL("http://localhost:8080/projetosAtribuicao");
+                    URL url = new URL("http://localhost:8080/projetosSemAtribuicao");
                     HttpURLConnection conn = (HttpURLConnection) url.openConnection();
                     conn.setRequestMethod("GET");
                     conn.setRequestProperty("Accept", "application/json");
