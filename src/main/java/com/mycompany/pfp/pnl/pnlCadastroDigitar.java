@@ -49,7 +49,6 @@ public class pnlCadastroDigitar extends javax.swing.JPanel {
             protected Void doInBackground() {
                 try {
                     URL url = new URL("http://localhost:8080/funcionarioid?id=" + id);
-                    System.out.println(url);
                     HttpURLConnection conn = (HttpURLConnection) url.openConnection();
                     conn.setRequestMethod("GET");
                     conn.setRequestProperty("Accept", "application/json");
@@ -457,8 +456,8 @@ public class pnlCadastroDigitar extends javax.swing.JPanel {
 
             BigDecimal salario = new BigDecimal(texto.replace(",", ""));
 
-            System.out.println("Salário convertido: " + salario);
             String json = String.format(
+                Locale.US,
                 "{" +
                 "\"nome_completo\":\"%s\"," +
                 "\"data_de_nascimento\":\"%s\"," +
@@ -488,7 +487,7 @@ public class pnlCadastroDigitar extends javax.swing.JPanel {
                 cboEC.getSelectedItem().toString(),                 // estado_civil
                 txtCargo.getText(),            // cargo_funcao
                 admissao,               // data_de_admissao
-                salario,                    // salario
+                salario.doubleValue(),                    // salario
                 cboRegime.getSelectedItem().toString(),                      // regime_de_contratacao
                 txtPIS.getText(),              // numero_do_pis
                 txtBanco.getText(),          // banco
@@ -496,13 +495,11 @@ public class pnlCadastroDigitar extends javax.swing.JPanel {
                 txtConta.getText(),                 // conta_bancaria
                 admissao                // exame_admissional
             );
-            System.out.println(json);
             URL url = new URL("http://localhost:8080/funcionarios"); // ajuste para o endpoint correto
 
             if(id > 0){
                 url = new URL("http://localhost:8080/funcionarios?id=" + id); // ajuste para o endpoint correto
             }
-            System.out.println(url);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             if(id > 0){
                 conn.setRequestMethod("PUT");
