@@ -4,12 +4,14 @@ com\mycompany\pfp\pnl\pnlEstoqueConsulta$2.class
 com\mycompany\pfp\pnl\pnlRegistroConsulta$Atribuicao.class
 com\mycompany\pfp\pnl\pnlEstoqueConsulta$Estoque.class
 com\mycompany\pfp\Principal$9.class
+com\mycompany\pfp\pnl\pnlAtribuicaoDigitar$5.class
 com\mycompany\pfp\pnl\pnlCadastroDigitar$4.class
 com\mycompany\pfp\pnl\pnlRegistroConsulta.class
 com\mycompany\pfp\pnl\pnlEstoqueDigitar$4.class
 com\mycompany\pfp\pnl\pnlRegistroDigitar$Atribuicao.class
 com\mycompany\pfp\pnl\pnlCadastroDigitar$1$1.class
 com\mycompany\pfp\Pontos$2.class
+com\mycompany\pfp\pnl\pnlAtribuicaoDigitar.class
 com\mycompany\pfp\pnl\pnlCadastroDigitar$10.class
 com\mycompany\pfp\Pfp$2.class
 com\mycompany\pfp\pnl\pnlRegistroConsulta$2.class
@@ -38,6 +40,8 @@ com\mycompany\pfp\pnl\pnlRegistroConsulta$1.class
 com\mycompany\pfp\pnl\pnlRegistroDigitar$3.class
 com\mycompany\pfp\pnl\pnlCadastroDigitar$7.class
 com\mycompany\pfp\Principal$5.class
+com\mycompany\pfp\pnl\pnlAtribuicaoDigitar$1$1.class
+com\mycompany\pfp\pnl\pnlAtribuicaoDigitar$2.class
 com\mycompany\pfp\pnl\pnlEstoqueDigitar$3.class
 com\mycompany\pfp\Pfp$1.class
 com\mycompany\pfp\Pontos$1.class
@@ -57,11 +61,14 @@ com\mycompany\pfp\pnl\pnlCadastroDigitar$6.class
 com\mycompany\pfp\pnl\pnlEstoqueDigitar$2.class
 com\mycompany\pfp\pnl\pnlEstoqueDigitar.class
 com\mycompany\pfp\pnl\pnlRegistroDigitar$2.class
+com\mycompany\pfp\pnl\pnlAtribuicaoDigitar$3.class
 com\mycompany\pfp\Principal$10.class
 com\mycompany\pfp\Principal$3.class
 com\mycompany\pfp\pnl\pnlAtribuicaoConsulta$1$1.class
+com\mycompany\pfp\pnl\pnlAtribuicaoDigitar$1.class
 com\mycompany\pfp\pnl\pnlInicio$Projetos.class
 com\mycompany\pfp\Principal$1.class
+com\mycompany\pfp\pnl\pnlAtribuicaoConsulta$3.class
 com\mycompany\pfp\pnl\pnlInicio$1$1.class
 com\mycompany\pfp\Pfp.class
 com\mycompany\pfp\pnl\pnlCadastroConsulta$1.class
@@ -71,6 +78,7 @@ com\mycompany\pfp\pnl\pnlCadastroDigitar$8.class
 com\mycompany\pfp\pnl\pnlEstoqueConsulta$1.class
 com\mycompany\pfp\Principal$11.class
 com\mycompany\pfp\SideMenuPanel$1.class
+com\mycompany\pfp\pnl\pnlAtribuicaoDigitar$4.class
 com\mycompany\pfp\pnl\pnlEstoqueDigitar$1.class
 com\mycompany\pfp\Pfp$3.class
 com\mycompany\pfp\pnl\pnlRegistroDigitar$1$2.class

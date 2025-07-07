@@ -6,6 +6,8 @@ package com.mycompany.pfp.pnl;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.mycompany.pfp.Principal;
+import com.mycompany.pfp.model.Funcionario;
 import java.io.InputStreamReader;
 import java.io.Reader;
 import java.lang.reflect.Type;
@@ -13,6 +15,8 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.List;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.SwingUtilities;
 import javax.swing.SwingWorker;
 import javax.swing.table.DefaultTableModel;
 
@@ -21,12 +25,12 @@ import javax.swing.table.DefaultTableModel;
  * @author rsouz
  */
 public class pnlAtribuicaoConsulta extends javax.swing.JPanel {
+    private List<Atribuicao> atr;
+    private Principal principal;
 
-    /**
-     * Creates new form pnlAtribuicaoConsulta
-     */
-    public pnlAtribuicaoConsulta() {
+    public pnlAtribuicaoConsulta(Principal principal) {
         initComponents();
+        this.principal = principal;
         carregarDados();
     }
     
@@ -44,14 +48,16 @@ public class pnlAtribuicaoConsulta extends javax.swing.JPanel {
                         Reader reader = new InputStreamReader(conn.getInputStream());
                         Type listType = new TypeToken<List<pnlAtribuicaoConsulta.Atribuicao>>(){}.getType();
                         List<pnlAtribuicaoConsulta.Atribuicao> lista = new Gson().fromJson(reader, listType);
+                        atr = lista;
                         
                         DefaultTableModel modelo = (DefaultTableModel) TblLista.getModel();
                         modelo.setRowCount(0); // limpa a tabela antes de adicionar
                         for (pnlAtribuicaoConsulta.Atribuicao f : lista) {
+                            System.out.println(f.id);
                             modelo.addRow(new Object[]{
                                 f.empresaCliente,
                                 f.funcionarioResponsavel,
-                                f.titulo_item,
+                                f.nomeProjeto,
                                 f.quantidade
                             });
                         }
@@ -72,6 +78,7 @@ public class pnlAtribuicaoConsulta extends javax.swing.JPanel {
     }
     
     public class Atribuicao{
+        long id;
         String nomeProjeto;
         String dataInicio;
         String dataPrevisaoEntrega;
@@ -123,6 +130,11 @@ public class pnlAtribuicaoConsulta extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        TblLista.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TblListaMouseClicked(evt);
+            }
+        });
         jScrollPane6.setViewportView(TblLista);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -148,6 +160,18 @@ public class pnlAtribuicaoConsulta extends javax.swing.JPanel {
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void TblListaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TblListaMouseClicked
+        if (evt.getClickCount() == 2 && SwingUtilities.isLeftMouseButton(evt)) {
+            JTable tabela = (JTable) evt.getSource();
+            int linha = tabela.rowAtPoint(evt.getPoint());
+            int modelRow = tabela.convertRowIndexToModel(linha);
+            
+            Atribuicao selecionado = atr.get(modelRow);
+            
+            principal.SwitchPanel("pnlAtribuicaoDigitar",new pnlAtribuicaoDigitar(selecionado.id));
+        }
+    }//GEN-LAST:event_TblListaMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

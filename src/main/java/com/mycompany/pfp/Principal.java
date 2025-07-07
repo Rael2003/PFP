@@ -264,7 +264,7 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCadastroActionPerformed
 
     private void btnAtribuicaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtribuicaoActionPerformed
-        SwitchPanel("pnlAtribuicaoConsulta",new pnlAtribuicaoConsulta());
+        SwitchPanel("pnlAtribuicaoConsulta",new pnlAtribuicaoConsulta(this));
     }//GEN-LAST:event_btnAtribuicaoActionPerformed
 
     private void btnRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistroActionPerformed
