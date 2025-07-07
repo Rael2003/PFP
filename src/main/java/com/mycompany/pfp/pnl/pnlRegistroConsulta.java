@@ -47,7 +47,13 @@ public class pnlRegistroConsulta extends javax.swing.JPanel {
                         
                         DefaultTableModel modelo = (DefaultTableModel) TblLista.getModel();
                         modelo.setRowCount(0); // limpa a tabela antes de adicionar
+                        long id = 0; 
                         for (pnlAtribuicaoConsulta.Atribuicao f : lista) {
+                            if(f.id != id && id != 0){
+                                modelo.addRow(new Object[]{
+                                });
+                            } 
+                            id = f.id;
                             modelo.addRow(new Object[]{
                                 f.empresaCliente,
                                 f.funcionarioResponsavel,
